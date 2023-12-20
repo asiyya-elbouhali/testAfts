@@ -1,0 +1,23 @@
+<div>
+    <h2>Fish List</h2>
+    <ul>
+      <li *ngFor="let fish of fishList">
+        {{ fish.name }} - {{ fish.averageWeight }}
+        <button (click)="editFish(fish)">Edit</button>
+        <button (click)="deleteFish(fish.name)">Delete</button>
+      </li>
+    </ul>
+  
+    <h2>{{ isEditing ? 'Edit' : 'Create' }} Fish</h2>
+    <form *ngIf="selectedFish" (ngSubmit)="isEditing ? updateFish() : createFish()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="selectedFish.name" required><br><br>
+      
+      <label for="averageWeight">Average Weight:</label>
+      <input type="text" id="averageWeight" [(ngModel)]="selectedFish.averageWeight" required><br><br>
+      
+      <button type="submit">{{ isEditing ? 'Update' : 'Create' }}</button>
+      <button type="button" (click)="cancelEdit()" *ngIf="isEditing">Cancel</button>
+    </form>
+  </div>
+  

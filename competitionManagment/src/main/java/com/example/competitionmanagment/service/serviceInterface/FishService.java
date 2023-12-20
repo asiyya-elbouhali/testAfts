@@ -13,6 +13,12 @@ public interface FishService {
     boolean checkFishWeight(String fishname,float weight);
 
     List<Fish> FetchFish();
+    Optional<Fish> findFishByName(String fishName);
 
+    Fish createFish(FishDto fishDto);
+
+    Fish updateFish(String fishName, FishDto updatedFishDto);
+
+    void deleteFish(String fishName);
 //    FishDto createFish(FishDto fish);
 }

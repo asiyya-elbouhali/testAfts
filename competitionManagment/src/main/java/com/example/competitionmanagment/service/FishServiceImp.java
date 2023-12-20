@@ -54,4 +54,36 @@ public class FishServiceImp implements FishService {
     public List<Fish> FetchFish() {
         return fishRepository.findAll();
     }
+
+
+
+    @Override
+    public Optional<Fish> findFishByName(String fishName) {
+        return fishRepository.findByName(fishName);
+    }
+
+    @Override
+    public Fish createFish(FishDto fishDto) {
+        Fish fish = FishMapper.FM.toEntity(fishDto);
+        return fishRepository.save(fish);
+    }
+
+    @Override
+    public Fish updateFish(String fishName, FishDto updatedFishDto) {
+        Optional<Fish> optionalFish = fishRepository.findByName(fishName);
+        if (optionalFish.isPresent()) {
+            Fish fishToUpdate = optionalFish.get();
+            // Update fish entity with the new data from updatedFishDto
+            // (you might need to modify this based on your application's logic)
+            fishToUpdate.setName(updatedFishDto.name);
+            fishToUpdate.setAverageWeight(updatedFishDto.averageWeight);
+            return fishRepository.save(fishToUpdate);
+        }
+        return null; // Or handle the case when the fish is not found
+    }
+
+    @Override
+    public void deleteFish(String fishName) {
+        fishRepository.deleteById(fishName);
+    }
 }

@@ -26,8 +26,10 @@ export class DialogmemberComponent implements OnInit{
       familyName: ['', [Validators.required]],
       nationality: ['', [Validators.required]],
       identity: ['', [Validators.required]],
-      identityNumber: ['', [Validators.required]],
+      identityNumber: ['', [Validators.required]]
       // competitionCode: ['', [Validators.required]],
+      // accessionDate: ['',[Validators.required]],
+      // num:['',[Validators.required]]
     });
   }
 

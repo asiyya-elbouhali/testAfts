@@ -20,6 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DialoghuntingComponent } from './Component/dialoghunting/dialoghunting.component';
 import { MenuComponent } from './Component/menu/menu.component';
+import { FishComponent } from './Component/fish/fish.component';
+import { RankingComponent } from './Component/ranking/ranking.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { MenuComponent } from './Component/menu/menu.component';
     DialogmemberComponent,
     DialoghuntingComponent,
     MenuComponent,
+    FishComponent,
+    RankingComponent,
     
   ],
   imports: [
