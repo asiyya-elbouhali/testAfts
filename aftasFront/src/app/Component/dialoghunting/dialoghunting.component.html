@@ -1,0 +1,38 @@
+<div class="container contact-form" style="overflow: hidden;">
+
+    <h5 class="text-center mt-4" style="color: #5377f8b0;">Add Hunting</h5>
+    <div class="container contact-form">
+  
+      <form [formGroup]="myForm" (submit)="Submit()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group" style="height: 72px;">
+                <label for="identity" class="lb" >Fish</label>
+                <select class="form-select" aria-label="Default select example" formControlName="fishname">
+                  <option  *ngFor="let fish of fishs" value="{{fish.name}}" selected>{{fish.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="familyName"  class="lb" >Weight</label>
+              <input type="number"  class="form-control" formControlName="weight" placeholder="fish weight" />
+            </div>
+            
+          </div>
+          <div class="col-md-6">
+            
+            <div class="form-group">
+              <label for="identityNumber" class="lb" >Number of Fish</label>
+              <input type="number"  class="form-control" placeholder="Enter Identity Number" formControlName="numberOfFish" />
+            </div>
+            
+          </div>
+        </div>
+        <div class="form-group text-center mt-5">
+          <input type="submit" name="btnSubmit" class="btnContact" value="Add Member" />
+        </div>
+      </form>
+  
+    </div>
+  
+  </div>
+  

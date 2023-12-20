@@ -1,0 +1,22 @@
+.btnContactSubmit
+{
+    width: 187.33px;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #102e4e;
+    border: none;
+    cursor: pointer;
+}
+
+.date-time-price {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .date-time-price p {
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,82 @@
+<h1 class="font-bold py-4 uppercase"> competitions</h1>
+<div class="p-5">
+  <div class="addCompetition d-flex justify-content-between ">
+     <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()"></fa-icon>
+    <!-- <fa-icon [icon]="facofe" class="fs-4" (click)="show()"></fa-icon> -->
+  </div>
+
+
+  <!-- start card -->
+    <div class="row  ">
+    
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let compet of competitions">
+        <div id="stats">
+          <div class="bg-black/60 to-white/5 rounded-lg">
+            <div class="max-w-xl mx-auto">
+              <div class="bg-black shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img class="rounded-t-lg h-80 w-full" src="https://source.unsplash.com/random/300×300" alt="">
+                </a>
+                <div class="p-3">
+                  <a href="#">
+                    <h5 class="text-gray-900 font-bold text-xl tracking-tight mb-2 dark:text-white">{{ compet.location }}</h5>
+                  </a>
+                  <div class="date-time-price">
+                    <p><strong>Date:</strong> {{ compet.date }}</p>
+                    <p><strong>Start Time:</strong> {{ compet.startTime }}</p>
+                    <p><strong>End Time:</strong> {{ compet.endTime }}</p>
+                    <p><strong>Price:</strong> {{ compet.amount }},00 DH</p>
+                  </div>
+                  <button routerLink="/member/{{ compet.code }}" class="btn btn-outline-light">View Members <fa-icon [icon]="play" class="fs-6"></fa-icon></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>  
+
+  <!-- enf of cards -->
+  <!-- <table class="table align-middle mb-0 bg-white text-center">
+
+    <thead class="bg-light">
+      <tr>
+        <th>Competition</th>
+        <th>Date <fa-icon [icon]="date" class="fs-6"></fa-icon></th>
+        <th>Status</th>
+        <th>City</th>
+        <th>Competators</th>
+        <th>More Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let compet of competitions" class="text-center">
+        <td>
+          {{compet.code}}
+        </td>
+        <td>
+          {{compet.date}}
+        </td>
+        <td>
+          empty
+        </td>
+        <td>
+          {{compet.location}}
+        </td>
+        <td>
+          {{compet.numberOfParticipants}}
+        </td>
+        <td>
+          <button routerLink="/member/{{compet.code}}" class="btn btn-outline-dark">See Members</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table> -->
+  <mat-paginator class="bg-black text-white "  [length]=totlaPage [pageSize]="1" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+
+</div>

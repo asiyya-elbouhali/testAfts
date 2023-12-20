@@ -1,0 +1,27 @@
+
+/* .pureBack{
+    background-color: #f8f9fa;
+}
+.simBack{
+    background-color: #f3f5f7;
+} */
+
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+.test {
+  /* background-image: url("../assets/images/bgUnderTheWater.jpg"); */
+  background-size: cover; 
+}
+/* Default light mode */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212; /* Dark background color */
+  color: white; /* Lighter text color */
+}
