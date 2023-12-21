@@ -82,7 +82,6 @@ public class HuntingController {
     @GetMapping("/huntings")
     public ResponseEntity fetchHunting(@RequestParam String code){
 
-
         List<Ranking> rankings = huntingService.calculateScoreWithoutSaving(code);
 
         List<Ranking> rankings1 = huntingService.saveScores(rankings);

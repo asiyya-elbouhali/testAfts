@@ -22,8 +22,7 @@ import { DialoghuntingComponent } from './Component/dialoghunting/dialoghunting.
 import { MenuComponent } from './Component/menu/menu.component';
 import { FishComponent } from './Component/fish/fish.component';
 import { RankingComponent } from './Component/ranking/ranking.component';
-
-
+ 
 @NgModule({
   declarations: [
     AppComponent,

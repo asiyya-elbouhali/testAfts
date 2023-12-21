@@ -1,1 +1,9 @@
-<p>ranking works!</p>
+<div>
+    <h2>Winners Podium</h2>
+    <ul>
+      <li  *ngFor="let winner of winners.slice(0, 3)">
+        {{ winner.name }} - Score:  {{ winner.score }} - Rank: {{ winner.rank }}
+      </li>
+    </ul>
+  </div>
+  

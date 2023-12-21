@@ -7,7 +7,7 @@ import { RankingComponent } from './Component/ranking/ranking.component';
 const routes: Routes = [
   {path:"competition",component:CompetitionComponent},
   {path:"member/:code",component:MemberComponent},
-  {path:"ranking/",component:RankingComponent}
+  {path:"member/winners/:code",component:RankingComponent}
 
 ];
 

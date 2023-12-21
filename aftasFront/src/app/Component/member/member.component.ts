@@ -20,14 +20,19 @@ export class MemberComponent implements OnInit{
   members : Member[] = [];
   totalPage :any;
   pageSize = 6;
+  code: string = '';
   pageIndex = 0;
   constructor(private service:MemberService,private route: ActivatedRoute,private dialog : DialogService) {}
   ngOnInit(): void {
     this.competitioncode = this.route.snapshot.paramMap.get('code');
-    console.log("hello world member");
-    console.log(this.competitioncode);
+    this.route.params.subscribe(params => {
+      this.code = params['code'];
+    });
+    console.log("ygu",this.code);
     this.fetchMembers(this.competitioncode);
   }
+
+
   fetchMembers(code : String){
     const startindex = this.pageIndex * this.pageSize;
     const endIndex = startindex + this.pageSize;
@@ -37,7 +42,7 @@ export class MemberComponent implements OnInit{
       console.log(this.members);
       this.totalPage = res.totalPages;
     })
-  }
+  } 
 
 
   openDialog(){

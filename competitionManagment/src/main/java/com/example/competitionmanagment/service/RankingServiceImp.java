@@ -1,6 +1,5 @@
 package com.example.competitionmanagment.service;
 
-import com.example.competitionmanagment.dao.CompetitionRepository;
 import com.example.competitionmanagment.dao.RankingRepository;
 import com.example.competitionmanagment.entity.Competition;
 import com.example.competitionmanagment.entity.Ranking;

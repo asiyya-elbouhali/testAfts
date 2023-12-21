@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialogmember',
-  templateUrl: './dialogmember.component.html',
+  templateUrl: './dialogmember.component.html', 
   styleUrls: ['./dialogmember.component.css']
 })
 export class DialogmemberComponent implements OnInit{

@@ -24,4 +24,7 @@ export class MemberService {
     }
 
 
+    GetWinners(code: string): Observable<any> {
+      return this.http.get(`${this.url}member/winners/${code}`);
+    }
 }

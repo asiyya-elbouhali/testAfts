@@ -25,8 +25,6 @@ public class Ranking {
     @JoinColumn(name = "competitionCode",insertable = false,updatable = false)
     private Competition competition;
 
-
-
     private int rank;
     private int score;
 }

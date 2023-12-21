@@ -8,6 +8,8 @@ export class Member {
     identity!: String;
     identityNumber!: String;
     competitionCode!: String;
+score: any;
+rank: any;
 
 
 
