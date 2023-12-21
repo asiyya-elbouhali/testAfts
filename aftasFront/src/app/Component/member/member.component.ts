@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/Model/member';
 import { MemberService } from 'src/app/Service/member.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faPlusCircle,faCalendar,faAddressCard,faEarthAfrica } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from 'src/app/Service/dialog.service';
 import { PageEvent } from '@angular/material/paginator';
+import { HuntingService } from '../../Service/hunting.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class MemberComponent implements OnInit{
   pageSize = 6;
   code: string = '';
   pageIndex = 0;
-  constructor(private service:MemberService,private route: ActivatedRoute,private dialog : DialogService) {}
+  constructor(private service:MemberService,private route: ActivatedRoute,private dialog : DialogService,    private huntingService: HuntingService,     private router: Router  ) {}
   ngOnInit(): void {
     this.competitioncode = this.route.snapshot.paramMap.get('code');
     this.route.params.subscribe(params => {
@@ -44,6 +45,16 @@ export class MemberComponent implements OnInit{
     })
   } 
 
+  getHuntingsData(code: string): void {
+    this.huntingService.fetchHuntings(code).subscribe(
+      (data) => {
+         console.log('Huntings data:', data);
+       },
+      (error) => {
+         console.error('Error fetching huntings data:', error);
+      }
+    );
+  }
 
   openDialog(){
     this.dialog.openDialogMember(this.competitioncode);

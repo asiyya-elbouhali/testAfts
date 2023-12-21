@@ -1,13 +1,15 @@
 <h1 class="font-bold py-4 uppercase"> members</h1>
 
 <div class="px-5 pt-3">
-
-
+  <a  (click)="getHuntingsData(code)" class="nav-link px-0 align-middle cursor-pointer"> 
+    Close Competition </a>
+  
+  <a [routerLink]="'/member/winners/'+code"  data-bs-toggle="collapse" class="nav-link px-0 align-middle "> The winners 
+  </a>
 
   <div class="addCompetition d-flex justify-content-between my-2 bg-gray-800 p-2 rounded-lg">     
     <h6 > Add New Participant</h6>
-    <a [routerLink]="'/member/winners/'+code"  data-bs-toggle="collapse" class="nav-link px-0 align-middle ">hbguv
-</a>
+
      <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()" ></fa-icon>
   </div>
   <!-- memberCard -->
