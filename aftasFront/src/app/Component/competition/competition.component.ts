@@ -24,7 +24,7 @@ export class CompetitionComponent implements OnInit {
   city = faLocationDot;
   myForm!: FormGroup;
   totlaPage : any;
-  pageSize = 6;
+  pageSize = 5;
   pageIndex = 0;
   constructor(private service : CompetitionService,private dialog : DialogService,private fb :FormBuilder){}
   ngOnInit(): void {

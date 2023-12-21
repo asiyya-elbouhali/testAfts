@@ -34,7 +34,7 @@ public class CompetitionServiceImp implements CompetitionService {
     @Override
     public Page<Competition> fetchCompetition(int Page) {
 
-        Pageable pageable = PageRequest.of(Page,6);
+        Pageable pageable = PageRequest.of(Page,5);
         Page<Competition> competitions = competitionRepository.findAll(pageable);
 
         return competitions;

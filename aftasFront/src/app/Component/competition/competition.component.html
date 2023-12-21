@@ -1,15 +1,33 @@
-<h1 class="font-bold py-4 uppercase"> competitions</h1>
+ <h1
+        class="font-bold text-lg lg:text-3xl bg-gradient-to-br from-white via-white/50 to-transparent bg-clip-text text-transparent">
+        competitions<span class="text-indigo-400">:</span></h1>
 <div class="p-5">
   <div class="addCompetition d-flex justify-content-between ">
-     <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()"></fa-icon>
+     <!-- <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()"></fa-icon> -->
     <!-- <fa-icon [icon]="facofe" class="fs-4" (click)="show()"></fa-icon> -->
   </div>
 
 
   <!-- start card -->
     <div class="row  ">
-    
+        <!-- component -->
+<div class="col-sm-12 col-md-6 col-lg-4 mb-4  ">
+  <div class="w-full max-w-md h-100   p-9 bg-black rounded-lg shadow-lg">
+      <h1 class="text-center text-2xl sm:text-2xl font-semibold mb-4 text-gray-800">File Drop and Upload</h1>
+      <div  (click)="openDialog()"  class="bg-black-100 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+          <label for="fileInput"class="cursor-pointer flex flex-col items-center space-y-2">
+              <svg class="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+              <span class="text-gray-600">Drag and drop your files here</span>
+            </label>
+          <input   id="fileInput" class="hidden" multiple>
+      </div>
+      <div class="mt-6 text-center" id="fileList"></div>
+  </div>
+</div>
       <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let compet of competitions">
+        
         <div id="stats">
           <div class="bg-black/60 to-white/5 rounded-lg">
             <div class="max-w-xl mx-auto">
@@ -74,7 +92,9 @@
 
     </tbody>
   </table> -->
-  <mat-paginator class="bg-black text-white "  [length]=totlaPage [pageSize]="1" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
+  <mat-paginator
+  class="bg-black text-white mt-auto absolute bottom-0 left-0 w-full"        
+  [length]=totlaPage [pageSize]="1" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
     (page)="onPageChange($event)">
   </mat-paginator>
 
